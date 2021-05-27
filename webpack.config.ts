@@ -1,10 +1,10 @@
-import path from 'path'
-import {Configuration as WebpackConfiguration} from 'webpack'
-import {Configuration as WebpackDevServerConfiguration} from 'webpack-dev-server'
-import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
+import path from 'path';
+import { Configuration as WebpackConfiguration } from 'webpack';
+import { Configuration as WebpackDevServerConfiguration } from 'webpack-dev-server';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 
 interface Configuration extends WebpackConfiguration {
-  devServer?: WebpackDevServerConfiguration
+  devServer?: WebpackDevServerConfiguration;
 }
 
 const config: Configuration = {
@@ -26,6 +26,10 @@ const config: Configuration = {
           },
         },
       },
+      {
+        test: /\.s[ac]ss$/i,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
     ],
   },
   resolve: {
@@ -39,15 +43,16 @@ const config: Configuration = {
     contentBase: path.join(__dirname, 'build'),
     compress: true,
     port: 4000,
+    historyApiFallback: true,
   },
   plugins: [
     new ForkTsCheckerWebpackPlugin({
       async: false,
       eslint: {
-        files: './src/**/*',
+        files: './src/**/*.{ts, tsx, js, jsx}',
       },
     }),
   ],
-}
+};
 
-export default config
+export default config;
