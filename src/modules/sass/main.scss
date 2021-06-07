@@ -1,8 +1,18 @@
 @charset 'utf-8';
 
-@import 'abstracts/*';
-@import 'base/*';
-@import 'components/*';
-@import 'layout/*';
-@import 'pages/*';
-@import 'themes/*';
+// Configuration and helpers
+
+// Vendors
+
+// Base styling
+@import 'base/base';
+// Layout replated sections (footer/header)
+
+// Components
+
+// Page-specific
+
+// Themes
+
+// Folders should be made for each of the above categories if not present
+// Guidelines: https://sass-guidelin.es/, https://sass-guidelin.es/#the-7-1-pattern
