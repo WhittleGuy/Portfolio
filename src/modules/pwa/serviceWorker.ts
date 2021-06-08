@@ -9,20 +9,23 @@ const version = 'v0.0.1'
 const cacheName = '::WebpackPWATemplate'
 
 // Files to be immediately cached. './build' is root
-const cacheFiles = ['/', '/manifest.json', './index.bundle.js', '/tinyEye.png']
+const cacheFiles = [
+  '/',
+  '/manifest.json',
+  './index.bundle.js',
+  '/mbv3_512_512.png',
+]
 
 // On install, cache all listed files
 self.addEventListener('install', (e) => {
   e.waitUntil(
     caches.open(version + cacheName).then((cache) => {
-      cache
-        .addAll(cacheFiles)
-        .then(() => {
-          console.log(`[Service Worker] Assets added to cache`)
-        })
-        .catch((err) => {
-          console.log(`[Service Worker] Error adding assets || ${err}`)
-        })
+      cache.addAll(cacheFiles).then(() => {
+        //console.log(`[Service Worker] Assets added to cache`)
+      })
+      // .catch((err) => {
+      //console.log(`[Service Worker] Error adding assets || ${err}`)
+      // })
     })
   )
 })
@@ -36,18 +39,18 @@ self.addEventListener('activate', (e) => {
           return key.indexOf(version) !== 0
         })
         .map((key) => {
-          console.log('[Service Worker] Removing old cache...')
+          //console.log('[Service Worker] Removing old cache...')
           return caches.delete(key)
         })
     })
   )
-  console.log('[Service Worker] Activated')
+  //console.log('[Service Worker] Activated')
 })
 
 // Intercept and resolve fetch requests
 self.addEventListener('fetch', (e) => {
-  console.log(`[Service Worker] Fetching ${e.request.mode} ${e.request.url}`)
-  console.log(caches.match(e.request))
+  //console.log(`[Service Worker] Fetching ${e.request.mode} ${e.request.url}`)
+
   // Redirect all nav requests to index.html to be handled by react-router
   if (e.request.mode === 'navigate') {
     e.respondWith(caches.match('/'))

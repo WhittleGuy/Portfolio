@@ -18,8 +18,8 @@
   ],
   "icons": [
     {
-      "src": "/tinyEye.png",
-      "sizes": "840x840"
+      "src": "/mbv3_512_512.png",
+      "sizes": "512x512"
     }
   ]
 }

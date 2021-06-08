@@ -46,7 +46,10 @@ const config: Configuration = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },
-  devtool: 'inline-source-map',
+
+  // Very nice for debugging, but significantly bloats bundle
+  //devtool: 'inline-source-map',
+
   // DevServer configuration
   devServer: {
     contentBase: path.join(__dirname, 'build'),
@@ -72,6 +75,10 @@ const config: Configuration = {
     new CopyWebpackPlugin({
       patterns: [
         {from: './src/modules/pwa/manifest.json', to: './manifest.json'},
+        {
+          from: './src/modules/images/mbv3_512_512.png',
+          to: './mbv3_512_512.png',
+        },
       ],
     }),
   ],
