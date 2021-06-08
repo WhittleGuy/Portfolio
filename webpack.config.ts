@@ -2,22 +2,29 @@ import path from 'path'
 import {Configuration as WebpackConfiguration} from 'webpack'
 import {Configuration as WebpackDevServerConfiguration} from 'webpack-dev-server'
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
+import {InjectManifest} from 'workbox-webpack-plugin'
+import CopyWebpackPlugin from 'copy-webpack-plugin'
 
 interface Configuration extends WebpackConfiguration {
   devServer?: WebpackDevServerConfiguration
 }
 
 const config: Configuration = {
-  entry: './src/index.tsx',
-  devtool: 'inline-source-map',
   mode: 'development',
+  entry: {
+    index: './src/index.tsx',
+  },
+  // Location and name of output file
+  output: {
+    path: path.resolve(__dirname, 'build'),
+    filename: '[name].bundle.js',
+  },
   module: {
     rules: [
       {
         // Use Babel to transpile/compile all .ts|js files
         test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
-        include: path.resolve(__dirname, 'src'),
         use: {
           loader: 'babel-loader',
           options: {
@@ -39,13 +46,7 @@ const config: Configuration = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },
-
-  // Location and name of output file
-  output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js',
-  },
-
+  devtool: 'inline-source-map',
   // DevServer configuration
   devServer: {
     contentBase: path.join(__dirname, 'build'),
@@ -62,6 +63,16 @@ const config: Configuration = {
       eslint: {
         files: './src/**/*.{ts, tsx, js, jsx}',
       },
+    }),
+    // Injects service worker
+    new InjectManifest({
+      swSrc: './src/modules/pwa/serviceWorker.ts',
+      compileSrc: true,
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {from: './src/modules/pwa/manifest.json', to: './manifest.json'},
+      ],
     }),
   ],
 }
