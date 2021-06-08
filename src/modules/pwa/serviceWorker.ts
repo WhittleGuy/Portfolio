@@ -9,7 +9,7 @@ const version = 'v0.0.1'
 const cacheName = '::WebpackPWATemplate'
 
 // Files to be immediately cached. './build' is root
-const cacheFiles = ['/', '/manifest.json', './index.bundle.js']
+const cacheFiles = ['/', '/manifest.json', './index.bundle.js', '/tinyEye.png']
 
 // On install, cache all listed files
 self.addEventListener('install', (e) => {
@@ -46,12 +46,21 @@ self.addEventListener('activate', (e) => {
 
 // Intercept and resolve fetch requests
 self.addEventListener('fetch', (e) => {
-  //console.log(`[Service Worker] Fetching ${e.request.url}`)
-  const response = fetch(e.request).then((res) => {
-    return res
-  })
+  console.log(`[Service Worker] Fetching ${e.request.mode} ${e.request.url}`)
+  console.log(caches.match(e.request))
+  // Redirect all nav requests to index.html to be handled by react-router
+  if (e.request.mode === 'navigate') {
+    e.respondWith(caches.match('/'))
+  }
 
-  e.respondWith(response)
+  // For all standard requests, fetch from server
+  else {
+    e.respondWith(
+      fetch(e.request)
+        // Fall back to cache
+        .catch(() => caches.match(e.request))
+    )
+  }
 })
 
 export type {}

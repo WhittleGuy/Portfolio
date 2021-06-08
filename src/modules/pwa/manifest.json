@@ -3,7 +3,7 @@
   "short_name": "webpack-pwa-template",
   "dir": "ltr",
   "lang": "en-US",
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
   "theme_color": "#7fbf7d",
   "background_color": "#000000",
