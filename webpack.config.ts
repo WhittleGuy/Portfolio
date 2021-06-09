@@ -74,6 +74,7 @@ const config: Configuration = {
     }),
     new CopyWebpackPlugin({
       patterns: [
+        {from: './src/index.html', to: './index.html'},
         {from: './src/modules/pwa/manifest.json', to: './manifest.json'},
         {
           from: './src/modules/images/mbv3_512_512.png',
