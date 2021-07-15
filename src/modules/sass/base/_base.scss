@@ -10,10 +10,9 @@
 
 main {
   width: 100vw;
-  height: 100vh;
+  height: #{100vh - $navHeight};
   position: absolute;
-  top: 0;
+  top: $navHeight;
   left: 0;
   overflow: clip;
-  padding-top: 45px;
 }

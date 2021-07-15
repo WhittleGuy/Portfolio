@@ -81,12 +81,20 @@ const Particles = (): JSX.Element => {
     for (let i = 0; i < N_PARTICLES; i++) {
       PARTICLES.push(generateParticle(RADIUS, VELOCITY))
     }
+    const canvas = canvasRef.current
     if (canvasRef.current) {
       ctxRef.current = canvasRef.current.getContext('2d')
       if (ctxRef.current) {
         const ctx = ctxRef.current
+        ctxRef.current.clearRect(0, 0, WIDTH, HEIGHT)
         ctx.fillStyle = '#000'
         ctx.fillRect(0, 0, WIDTH, HEIGHT)
+      }
+    }
+
+    return () => {
+      for (let i = 0; i < N_PARTICLES; i++) {
+        PARTICLES.pop()
       }
     }
   }, [])
@@ -106,7 +114,9 @@ const Particles = (): JSX.Element => {
       }
     }, 1000 / FPS)
 
-    return () => clearInterval(interval)
+    return () => {
+      clearInterval(interval)
+    }
   })
 
   return (

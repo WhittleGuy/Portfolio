@@ -14,11 +14,10 @@
   }
 
   &:hover {
-    background: linear-gradient(to bottom, #fff, #999999);
+    background-color: #dbd9d9;
   }
 
   &#active {
-    background: linear-gradient(to bottom, #fff, #999999);
-    border-bottom: 3px solid $tertiary;
+    border-bottom: 2px solid $primary-text;
   }
 }

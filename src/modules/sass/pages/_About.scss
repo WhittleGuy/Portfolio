@@ -1,0 +1,9 @@
+.about-pane {
+  height: #{100vh - $navHeight};
+  width: 50%;
+  position: absolute;
+  top: 0;
+  left: 25%;
+  padding: 1rem;
+  color: $primary-text;
+}

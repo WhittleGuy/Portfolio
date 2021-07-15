@@ -5,7 +5,7 @@ import {NavTab} from '.'
 
 const NavBar = (): JSX.Element => {
   const history = useHistory()
-  const [activeTab, setActiveTab] = useState(0)
+  const [activeTab, setActiveTab] = useState(-1)
 
   const toggleActive = (index: number) => {
     if (activeTab !== index) setActiveTab(index)
@@ -13,7 +13,13 @@ const NavBar = (): JSX.Element => {
 
   return (
     <nav id="nav-bar">
-      <div id="nav-bar-name" onClick={() => history.push('/')}>
+      <div
+        id="nav-bar-name"
+        onClick={() => {
+          history.push('/')
+          setActiveTab(-1)
+        }}
+      >
         Brandon Whittle
       </div>
       {ROUTES.filter((r) => {

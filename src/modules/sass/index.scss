@@ -3,6 +3,7 @@
 // Configuration and helpers
 @import 'abstracts/colors.scss';
 @import 'abstracts/mixins.scss';
+@import 'abstracts/variables';
 
 // Vendors
 
@@ -17,6 +18,7 @@
 @import 'components/RoundButton';
 
 // Page-specific
+@import 'pages/About';
 @import 'pages/Landing';
 
 // Themes
