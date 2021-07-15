@@ -1,20 +1,22 @@
 {
-  "name": "webpack-pwa-template",
-  "short_name": "webpack-pwa-template",
+  "name": "brandon-whittle-portfolio",
+  "short_name": "whittle-portfolio",
   "dir": "ltr",
   "lang": "en-US",
   "start_url": "/",
   "display": "standalone",
   "theme_color": "#7fbf7d",
   "background_color": "#000000",
-  "description": "webpack-pwa-template",
+  "description": "Portfolio made by and for Brandon Whittle",
   "categories": [
-    "template",
-    "webpack",
-    "babel",
-    "progressive web app",
-    "pwa",
-    "service worker"
+    "Brandon",
+    "Whittle",
+    "Portfolio",
+    "Environmental",
+    "Engineering",
+    "Engineer",
+    "Web",
+    "Development"
   ],
   "icons": [
     {

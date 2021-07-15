@@ -1,0 +1,21 @@
+.round-button {
+  @include flex;
+  @include standard-transition;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: $offwhite;
+  font-size: 3rem;
+  font-weight: 1000;
+  z-index: 1;
+  box-shadow: inset 0 0 0 0 transparent;
+
+  :only-child {
+    height: 70%;
+    width: 70%;
+  }
+
+  &:hover {
+    box-shadow: inset 0 0 8px 2px $primary-text;
+  }
+}

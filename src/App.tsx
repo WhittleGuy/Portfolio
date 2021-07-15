@@ -1,12 +1,13 @@
-import React from 'react';
-import Routes from './routes';
+import React from 'react'
+import Routes from './routes'
+import './modules/sass/index.scss'
 
 const App: React.FunctionComponent = () => {
   return (
-    <div>
+    <main>
       <Routes />
-    </div>
-  );
-};
+    </main>
+  )
+}
 
-export default App;
+export default App

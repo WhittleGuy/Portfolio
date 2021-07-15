@@ -1,16 +1,23 @@
 @charset 'utf-8';
 
 // Configuration and helpers
+@import 'abstracts/colors.scss';
+@import 'abstracts/mixins.scss';
 
 // Vendors
 
 // Base styling
 @import 'base/base';
 // Layout replated sections (footer/header)
+@import 'layout/NavBar';
 
 // Components
+@import 'components/NavTab';
+@import 'components/Particles';
+@import 'components/RoundButton';
 
 // Page-specific
+@import 'pages/Landing';
 
 // Themes
 
