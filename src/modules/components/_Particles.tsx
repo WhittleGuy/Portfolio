@@ -8,7 +8,7 @@ const RADIUS = 3
 const VELOCITY = 2
 let CONNECT_DISTANCE = WIDTH / 30
 const PARTICLES = []
-const FPS = 0.001 //75 // DO NOT CHANGE
+const FPS = 75 //75 // DO NOT CHANGE
 
 const generateParticle = (rad: number, maxVel: number): Particle => {
   const x = Math.random() * WIDTH
