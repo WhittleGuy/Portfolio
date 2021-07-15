@@ -43,7 +43,7 @@ const Landing: React.FC = () => {
       <RoundButton id="title-button" handler={() => handler()}>
         <RightArrow />
       </RoundButton>
-      <Particles />
+      <Particles wRatio={1} hRatio={1} />
     </div>
   )
 }

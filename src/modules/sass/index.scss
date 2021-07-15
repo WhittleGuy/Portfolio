@@ -9,17 +9,23 @@
 
 // Base styling
 @import 'base/base';
+@import 'base/typography';
+
 // Layout replated sections (footer/header)
+@import 'layout/Footer';
+@import 'layout/LinkHeader';
 @import 'layout/NavBar';
 
 // Components
 @import 'components/NavTab';
 @import 'components/Particles';
+@import 'components/ProjectCard';
 @import 'components/RoundButton';
 
 // Page-specific
 @import 'pages/About';
 @import 'pages/Landing';
+@import 'pages/Projects';
 
 // Themes
 

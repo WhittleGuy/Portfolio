@@ -1,0 +1,5 @@
+.project-cards {
+  @include flex(row, flex-start, flex-start);
+  flex-wrap: wrap;
+  width: 100%;
+}

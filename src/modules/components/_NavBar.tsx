@@ -6,13 +6,20 @@ import {NavTab} from '.'
 const NavBar = (): JSX.Element => {
   const history = useHistory()
   const [activeTab, setActiveTab] = useState(-1)
+  const [sticky, setSticky] = useState(false)
 
   const toggleActive = (index: number) => {
     if (activeTab !== index) setActiveTab(index)
   }
 
+  window.onscroll = () => {
+    const offset = document.getElementById('nav-bar').offsetTop
+    if (window.pageYOffset >= offset) setSticky(true)
+    else setSticky(false)
+  }
+
   return (
-    <nav id="nav-bar">
+    <nav id="nav-bar" className={sticky ? 'sticky' : null}>
       <div
         id="nav-bar-name"
         onClick={() => {

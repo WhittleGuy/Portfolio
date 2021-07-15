@@ -1,0 +1,163 @@
+.project-card {
+  flex-shrink: 0;
+  width: 30%;
+  height: 350px;
+  box-shadow: 2px 2px 4px -2px black;
+  border-radius: 0.5rem;
+  margin-right: 1.1%;
+  margin-top: 1.1%;
+  padding: 1rem;
+  background-color: $offwhite;
+  position: relative;
+
+  .title {
+  }
+
+  .affiliation {
+    font-size: 0.75rem;
+  }
+
+  .link-container {
+    @include flex(row, flex-start, flex-start);
+    margin: 0.5rem 0;
+
+    .link {
+      @include standard-transition;
+      text-decoration: none;
+      color: $primary;
+      margin-right: 1rem;
+
+      &.private {
+        color: #808080;
+      }
+
+      &:hover:not(.private) {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .description {
+  }
+
+  .tags {
+    @include flex(row, flex-end, flex-start);
+    flex-wrap: wrap;
+    height: max-content;
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 92.5%;
+
+    &::before {
+      content: 'Tags';
+      position: absolute;
+      top: -1rem;
+      left: 0;
+      font-size: 0.75rem;
+    }
+
+    .tag {
+      margin: 0.25rem 0.5rem 0.25rem 0;
+      padding: 0.125rem 0.5rem;
+      border-radius: 1rem;
+      font-size: 0.75rem;
+      box-shadow: 2px 2px 4px -2px $dark;
+      border: 2px solid black;
+      background-color: rgba(0, 0, 0, 0.2);
+      position: relative;
+      z-index: 1;
+
+      &.TypeScript {
+        border-color: rgb(0, 122, 204);
+        background-color: rgba(0, 122, 204, 0.2);
+      }
+
+      &.React {
+        border-color: rgb(0, 216, 255);
+        background-color: rgba(0, 216, 255, 0.2);
+      }
+
+      &.Sass {
+        border-color: rgb(204, 102, 153);
+        background-color: rgba(204, 102, 153, 0.2);
+      }
+
+      &.Laravel {
+        border-color: rgb(240, 83, 64);
+        background-color: rgba(240, 83, 64, 0.2);
+      }
+
+      &.Mobx {
+        border-color: rgb(231, 80, 10);
+        background-color: rgba(231, 80, 10, 0.2);
+      }
+
+      &.MySQL {
+        border-color: rgb(0, 117, 143);
+        background-color: rgba(0, 117, 143, 0.2);
+      }
+
+      &.PHP {
+        border-color: rgb(71, 74, 138);
+        background-color: rgba(71, 74, 138, 0.2);
+      }
+
+      &.HTML5 {
+        border-color: rgb(228, 77, 38);
+        background-color: rgba(241, 101, 41, 0.2);
+      }
+
+      &.CSS3 {
+        border-color: rgb(41, 101, 241);
+        background-color: rgba(41, 101, 241, 0.2);
+      }
+
+      &.Frontend {
+        border-color: rgb(251, 255, 35);
+        background-color: rgba(251, 255, 35, 0.2);
+      }
+
+      &.Backend {
+        border-color: rgb(159, 34, 231);
+        background-color: rgba(159, 34, 231, 0.2);
+      }
+
+      &.Axios {
+        border-color: rgb(64, 238, 93);
+        background-color: rgba(64, 238, 93, 0.2);
+      }
+
+      &.GoogleOAuth {
+        border-color: #4285f4;
+        background: none;
+      }
+      &.GoogleOAuth:before {
+        @include flex;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0.3;
+        border-radius: 1rem;
+        content: 'TypeScript';
+        color: transparent;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-image: conic-gradient(
+          #ea4335 45deg,
+          #4285f4 45deg,
+          #4285f4 135deg,
+          #34a853 135deg,
+          #34a853 225deg,
+          #fbbc05 225deg,
+          #fbbc05 315deg,
+          #ea4335 315deg
+        );
+        z-index: -1;
+      }
+    }
+  }
+}

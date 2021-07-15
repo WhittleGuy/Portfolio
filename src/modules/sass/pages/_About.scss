@@ -1,9 +1,5 @@
-.about-pane {
-  height: #{100vh - $navHeight};
-  width: 50%;
-  position: absolute;
-  top: 0;
-  left: 25%;
+.page-container {
+  width: 100%;
+  max-width: #{(1920/2)}px;
   padding: 1rem;
-  color: $primary-text;
 }

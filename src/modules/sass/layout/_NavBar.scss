@@ -1,18 +1,27 @@
-#nav-bar {
-  @include flex;
-  width: 100vw;
+nav {
   height: $navHeight;
-  box-shadow: 0 0 8px 1px black;
-  background: $offwhite;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
+  position: relative;
 
-  #nav-bar-name {
+  #nav-bar {
+    @include flex;
+    width: 100vw;
+    height: $navHeight;
+    box-shadow: 0 0 8px 1px black;
+    background: $offwhite;
     position: absolute;
-    top: 50%;
-    left: 1rem;
-    transform: translateY(-50%);
+    top: 0;
+    z-index: 5;
+
+    &.sticky {
+      position: fixed;
+      top: 0;
+    }
+
+    #nav-bar-name {
+      position: absolute;
+      top: 50%;
+      left: 1rem;
+      transform: translateY(-50%);
+    }
   }
 }

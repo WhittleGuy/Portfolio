@@ -1,9 +1,10 @@
 .landing-container {
-  height: 100vh;
   width: 100vw;
+  height: #{100vh - ($navHeight + $footerHeight)};
 
   .title-container {
     @include flex;
+    width: 80%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -12,15 +13,17 @@
 
     #landing-title,
     .title-caret {
-      font-family: sans-serif;
-      font-size: 10vh;
+      font-family: $headerType;
+      font-weight: 500;
+      font-size: 7.5rem;
       color: white;
     }
 
     .title-caret {
+      font-size: 6rem;
       position: relative;
-      font-weight: 400;
-      transform: translateY(-10%);
+      font-weight: 100;
+      transform: translateY(-5%);
 
       &.opacity-100 {
         opacity: 1;

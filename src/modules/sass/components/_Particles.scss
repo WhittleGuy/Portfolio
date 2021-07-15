@@ -1,9 +1,15 @@
 #particles-container {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   position: absolute;
   top: 0;
   left: 0;
   overflow: clip;
   z-index: 0;
+
+  #particles {
+    width: 100%;
+    height: 100%;
+    overflow: clip;
+  }
 }

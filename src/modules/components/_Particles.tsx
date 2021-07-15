@@ -8,7 +8,7 @@ const RADIUS = 3
 const VELOCITY = 2
 let CONNECT_DISTANCE = WIDTH / 30
 const PARTICLES = []
-const FPS = 75 // DO NOT CHANGE
+const FPS = 0.001 //75 // DO NOT CHANGE
 
 const generateParticle = (rad: number, maxVel: number): Particle => {
   const x = Math.random() * WIDTH
@@ -63,7 +63,7 @@ const connectParticles = (
   }
 }
 
-const Particles = (): JSX.Element => {
+const Particles = (props?: {wRatio?: number; hRatio?: number}): JSX.Element => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const ctxRef = useRef<CanvasRenderingContext2D | null>(null)
 
@@ -81,7 +81,6 @@ const Particles = (): JSX.Element => {
     for (let i = 0; i < N_PARTICLES; i++) {
       PARTICLES.push(generateParticle(RADIUS, VELOCITY))
     }
-    const canvas = canvasRef.current
     if (canvasRef.current) {
       ctxRef.current = canvasRef.current.getContext('2d')
       if (ctxRef.current) {
@@ -124,8 +123,8 @@ const Particles = (): JSX.Element => {
       <canvas
         id="particles"
         ref={canvasRef}
-        width={WIDTH}
-        height={HEIGHT}
+        width={WIDTH / props.wRatio}
+        height={HEIGHT / props.hRatio}
       ></canvas>
     </div>
   )

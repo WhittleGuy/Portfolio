@@ -6,13 +6,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: $primary;
 }
 
 main {
+  @include flex(column, center, flex-start);
   width: 100vw;
-  height: #{100vh - $navHeight};
-  position: absolute;
-  top: $navHeight;
-  left: 0;
-  overflow: clip;
+  min-height: #{100vh - ($navHeight + $footerHeight)};
+  height: max-content;
+  position: relative;
 }

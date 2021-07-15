@@ -1,5 +1,8 @@
+export {default as Footer} from './_Footer'
+export {default as LinkHeader} from './_LinkHeader'
 export {default as NavBar} from './_NavBar'
 export {default as NavTab} from './_NavTab'
 export {default as Particles} from './_Particles'
+export {default as ProjectCard} from './_ProjectCard'
 export {default as RightArrow} from './_RightArrow'
 export {default as RoundButton} from './_RoundButton'

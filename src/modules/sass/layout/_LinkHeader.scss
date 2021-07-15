@@ -1,0 +1,35 @@
+.link-header {
+  width: 100vw;
+  position: relative;
+  height: #{(1/6 + 0.05) * 100vh};
+
+  .particle-header {
+    height: 1/6 * 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .link-bar {
+    @include flex;
+    height: 0.05 * 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 1/6 * 100vh;
+    background: rgb(71, 166, 255);
+    box-shadow: inset 0 0 4px 0px black;
+
+    :nth-child(n) {
+      margin: 0 0.5rem;
+      text-decoration: none;
+      color: $secondary;
+      @include standard-transition;
+
+      &:hover {
+        transform: translateY(-7.5%);
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato&display=swap');
+
+* {
+  font-family: $paraType, sans-serif;
+}
+
+i {
+  margin-right: 0.25rem;
+}
+
+.section-title {
+  font-size: 7rem;
+  font-family: $headerType, sans-serif;
+}
