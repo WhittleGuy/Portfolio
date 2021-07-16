@@ -1,0 +1,19 @@
+.link-container {
+  @include flex(row, flex-start, flex-start);
+  margin: 0.5rem 0;
+
+  .link {
+    @include standard-transition;
+    text-decoration: none;
+    color: $primary;
+    margin-right: 1rem;
+
+    &.private {
+      color: #808080;
+    }
+
+    &:hover:not(.private) {
+      text-decoration: underline;
+    }
+  }
+}

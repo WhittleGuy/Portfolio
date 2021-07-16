@@ -44,7 +44,7 @@ const Landing: React.FC = () => {
       <RoundButton id="title-button" handler={() => handler()}>
         <i className="fas fa-arrow-right" style={{ fontSize: '2.5rem' }} />
       </RoundButton>
-      {/* <Particles width={2560} height={1337} /> */}
+      <Particles width={2560} height={1337} />
     </div>
   )
 }

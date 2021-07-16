@@ -4,9 +4,8 @@
   height: max-content;
   position: absolute;
   bottom: 0.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 92.5%;
+  left: 1rem;
+  width: 0.925 * 246px;
 
   &::before {
     content: 'Tags';

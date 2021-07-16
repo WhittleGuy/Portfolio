@@ -1,6 +1,6 @@
 .project-card {
+  @include flex(row, flex-start, flex-start);
   flex-shrink: 0;
-  width: 30%;
   height: 350px;
   box-shadow: 2px 2px 4px -2px black;
   border-radius: 0.5rem;
@@ -9,33 +9,10 @@
   background-color: $offwhite;
   position: relative;
 
-  .title {
-  }
-
-  .affiliation {
-    font-size: 0.75rem;
-  }
-
-  .link-container {
-    @include flex(row, flex-start, flex-start);
-    margin: 0.5rem 0;
-
-    .link {
-      @include standard-transition;
-      text-decoration: none;
-      color: $primary;
-      margin-right: 1rem;
-
-      &.private {
-        color: #808080;
-      }
-
-      &:hover:not(.private) {
-        text-decoration: underline;
-      }
+  .info-section {
+    width: 246px;
+    .affiliation {
+      font-size: 0.75rem;
     }
-  }
-
-  .description {
   }
 }

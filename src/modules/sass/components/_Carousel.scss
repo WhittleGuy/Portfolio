@@ -1,0 +1,55 @@
+.info-section + .carousel {
+  margin-left: 0.6rem;
+}
+
+.carousel {
+  position: relative;
+  .carousel-inner {
+    height: 318px;
+    width: 565px;
+    border-radius: 0.5rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .left-arrow,
+  .right-arrow {
+    position: absolute;
+    top: 50%;
+    color: $secondary;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .left-arrow {
+    left: 0.5rem;
+  }
+
+  .right-arrow {
+    right: 0.5rem;
+  }
+
+  .index-dots {
+    @include flex;
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.75rem;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    i {
+      color: $tertiary;
+      cursor: pointer;
+
+      ~ i {
+        margin-left: 0.25rem;
+      }
+
+      &.active {
+        pointer-events: none;
+      }
+    }
+  }
+}

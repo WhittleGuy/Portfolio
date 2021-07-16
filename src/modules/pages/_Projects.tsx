@@ -20,6 +20,7 @@ const Projects = (): JSX.Element => {
                 site={p.site}
                 private={p.private}
                 client={p.client}
+                images={p.images ? p.images : null}
               />
             )
           })}
@@ -39,6 +40,13 @@ const PROJECTS = [
     site: 'https://www.brandonwhittle.com',
     private: false,
     client: true,
+    images: [
+      'https://www.looper.com/img/gallery/things-only-adults-notice-in-alice-in-wonderland/intro-1602781527.jpg',
+      'https://wallpapercave.com/wp/GoYcMqd.jpg',
+      'https://i.redd.it/u105ro5rg8o31.jpg',
+      'https://webrfree.com/wp-content/uploads/2018/09/1920x1080_Abstract_025120152.jpg',
+      'https://wallpaperaccess.com/full/3281235.jpg',
+    ],
   },
   {
     name: 'MinerBytes Frontend',

@@ -1,3 +1,4 @@
+export { default as Carousel } from './_Carousel'
 export { default as Footer } from './_Footer'
 export { default as LinkHeader } from './_LinkHeader'
 export { default as NavBar } from './_NavBar'
