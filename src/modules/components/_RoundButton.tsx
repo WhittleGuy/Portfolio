@@ -5,7 +5,7 @@ const RoundButton = (props: {
   handler: () => void | null
   children: JSX.Element | string
 }): JSX.Element => {
-  const {id, handler, children} = props
+  const { id, handler, children } = props
   return (
     <div id={id} className="round-button" onClick={() => handler()}>
       {children}

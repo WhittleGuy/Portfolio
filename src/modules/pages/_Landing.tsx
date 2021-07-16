@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react'
-import {useHistory} from 'react-router-dom'
-import {Particles, RightArrow, RoundButton} from '../components'
+import React, { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
+import { Particles, RoundButton } from '../components'
 
 const Landing: React.FC = () => {
   const [type, setType] = useState('')
@@ -14,7 +14,7 @@ const Landing: React.FC = () => {
   }
 
   useEffect(() => {
-    setTimeout(() => {
+    const timeout = setTimeout(() => {
       let index = 0
       if (index < name.length) {
         const interval = setInterval(() => {
@@ -24,6 +24,7 @@ const Landing: React.FC = () => {
         return () => clearInterval(interval)
       }
     }, 2000)
+    return () => clearTimeout(timeout)
   }, [])
 
   useEffect(() => {
@@ -41,9 +42,9 @@ const Landing: React.FC = () => {
       </div>
 
       <RoundButton id="title-button" handler={() => handler()}>
-        <RightArrow />
+        <i className="fas fa-arrow-right" style={{ fontSize: '2.5rem' }} />
       </RoundButton>
-      <Particles wRatio={1} hRatio={1} />
+      {/* <Particles width={2560} height={1337} /> */}
     </div>
   )
 }

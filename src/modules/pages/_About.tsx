@@ -1,12 +1,11 @@
 import React from 'react'
-import {LinkHeader} from '../components'
+import { LinkHeader, PageContainer } from '../components'
 
 const About: React.FC = () => {
   return (
     <>
       <LinkHeader />
-      <div className="page-container">
-        <h1 className="section-title">About</h1>
+      <PageContainer title="About">
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. A nesciunt,
           et vel reprehenderit similique cupiditate molestias hic culpa illum
@@ -27,7 +26,7 @@ const About: React.FC = () => {
           maiores debitis voluptate odit culpa temporibus nemo est nobis
           recusandae
         </p>
-      </div>
+      </PageContainer>
     </>
   )
 }

@@ -1,11 +1,11 @@
 import React from 'react'
-import {Particles} from '.'
+import { Particles } from '.'
 
 const LinkHeader = (): JSX.Element => {
   return (
     <div className="link-header">
       <div className="particle-header">
-        <Particles wRatio={1} hRatio={6} />
+        {/* <Particles width={2560} height={222.83} /> */}
       </div>
       <div className="link-bar">
         <a

@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
-import {useHistory} from 'react-router-dom'
-import {ROUTES} from '../../routes'
-import {NavTab} from '.'
+import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
+import { ROUTES } from '../../routes'
+import { NavTab } from '.'
 
 const NavBar = (): JSX.Element => {
   const history = useHistory()

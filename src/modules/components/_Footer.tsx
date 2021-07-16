@@ -1,5 +1,5 @@
 import React from 'react'
-import {useHistory} from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 const Footer = (): JSX.Element => {
   const history = useHistory()
@@ -8,8 +8,10 @@ const Footer = (): JSX.Element => {
 
   return (
     <div id="footer">
-      <i className="far fa-copyright" />
-      <p>Brandon Whittle, 2021</p>
+      <p>
+        Brandon Whittle, <i className="far fa-copyright" />
+        2021
+      </p>
     </div>
   )
 }

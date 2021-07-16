@@ -1,7 +1,7 @@
 import React from 'react'
-import {Switch, Route} from 'react-router-dom'
-import {nanoid} from 'nanoid'
-import {About, Landing, NotFound, Projects, Skills} from './modules/pages'
+import { Switch, Route } from 'react-router-dom'
+import { nanoid } from 'nanoid'
+import { About, Landing, NotFound, Projects, Skills } from './modules/pages'
 
 const Routes = (): JSX.Element => {
   return (

@@ -1,13 +1,12 @@
 import React from 'react'
-import {LinkHeader, ProjectCard} from '../components'
-import {nanoid} from 'nanoid'
+import { LinkHeader, PageContainer, ProjectCard } from '../components'
+import { nanoid } from 'nanoid'
 
 const Projects = (): JSX.Element => {
   return (
     <>
       <LinkHeader />
-      <div className="page-container">
-        <h1 className="section-title">Projects</h1>
+      <PageContainer title="Projects">
         <div className="project-cards">
           {PROJECTS.map((p) => {
             return (
@@ -25,7 +24,7 @@ const Projects = (): JSX.Element => {
             )
           })}
         </div>
-      </div>
+      </PageContainer>
     </>
   )
 }

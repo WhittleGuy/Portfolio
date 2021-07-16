@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from 'react'
-import {useHistory} from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 
 const NavTab = (props: {
-  r: {title: string; path: string}
+  r: { title: string; path: string }
   active: boolean
   handler: () => void
 }): JSX.Element => {
