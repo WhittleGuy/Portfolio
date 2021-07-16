@@ -13,8 +13,7 @@ module.exports = function (api) {
         regenerator: true,
       },
     ],
-    'macros',
   ]
 
-  return {presets, plugins}
+  return { presets, plugins }
 }

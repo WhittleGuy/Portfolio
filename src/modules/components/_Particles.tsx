@@ -5,7 +5,7 @@ const N_PARTICLES = 750 //600
 const RADIUS = 3
 const VELOCITY = 3
 const PARTICLES = []
-const FPS = 2 //75 // DO NOT CHANGE
+const FPS = 30 //75 // DO NOT CHANGE
 
 const generateParticle = (
   width: number,
