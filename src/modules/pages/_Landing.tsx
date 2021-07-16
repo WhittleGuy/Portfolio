@@ -10,7 +10,7 @@ const Landing: React.FC = () => {
   const name = 'Brandon Whittle'
 
   const handler = () => {
-    history.push('/about')
+    history.push('/projects')
   }
 
   useEffect(() => {

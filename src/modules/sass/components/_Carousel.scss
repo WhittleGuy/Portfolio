@@ -22,22 +22,37 @@
   }
 
   .left-arrow {
+    @include standard-transition;
     left: 0.5rem;
+
+    &:hover {
+      transform: translateY(-50%) scale(1.25);
+    }
   }
 
   .right-arrow {
+    @include standard-transition;
     right: 0.5rem;
+
+    &:hover {
+      transform: translateY(-50%) scale(1.25);
+    }
   }
 
   .index-dots {
     @include flex;
+    @include standard-transition;
     position: absolute;
-    bottom: 1rem;
+    bottom: 0.25rem;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) scale(0.5);
     padding: 0.25rem 0.5rem;
     border-radius: 0.75rem;
     background-color: rgba(0, 0, 0, 0.6);
+
+    &:hover {
+      transform: translateX(-50%) scale(0.75);
+    }
 
     i {
       color: $tertiary;
