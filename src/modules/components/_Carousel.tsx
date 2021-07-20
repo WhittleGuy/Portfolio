@@ -15,39 +15,46 @@ const Carousel = (props: { images: string[] }): JSX.Element => {
   }
 
   return (
-    <div className="carousel">
-      <div
-        className="carousel-inner"
-        style={{ backgroundImage: `url(${props.images[index]})` }}
-      ></div>
-      <i
-        className="fas fa-arrow-alt-circle-left left-arrow"
-        onClick={() => {
-          prev()
-        }}
-      />
-      <i
-        className="fas fa-arrow-alt-circle-right right-arrow"
-        onClick={() => {
-          next()
-        }}
-      />
-      {props.images.length <= 1 ? null : (
-        <div className="index-dots">
-          {props.images.map((img, idx) => {
-            return (
+    <>
+      {props.images.length === 0 ? null : (
+        <div className="carousel">
+          <div
+            className="carousel-inner"
+            style={{ backgroundImage: `url(${props.images[index]})` }}
+          ></div>
+
+          {props.images.length < 2 ? null : (
+            <>
               <i
-                key={nanoid()}
-                className={
-                  idx === index ? `fas fa-circle active` : 'far fa-circle'
-                }
-                onClick={() => setIndex(idx)}
+                className="fas fa-arrow-alt-circle-left left-arrow"
+                onClick={() => {
+                  prev()
+                }}
               />
-            )
-          })}
+              <i
+                className="fas fa-arrow-alt-circle-right right-arrow"
+                onClick={() => {
+                  next()
+                }}
+              />
+              <div className="index-dots">
+                {props.images.map((img, idx) => {
+                  return (
+                    <i
+                      key={nanoid()}
+                      className={
+                        idx === index ? `fas fa-circle active` : 'far fa-circle'
+                      }
+                      onClick={() => setIndex(idx)}
+                    />
+                  )
+                })}
+              </div>
+            </>
+          )}
         </div>
       )}
-    </div>
+    </>
   )
 }
 
