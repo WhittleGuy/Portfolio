@@ -22,13 +22,13 @@ const LinkHeader = (): JSX.Element => {
         >
           <i className="fab fa-linkedin fa-2x" />
         </a>
-        <a
+        {/* <a
           href="https://www.twitter.com/whittleguyyy"
           rel="noopener noreferrer"
           target="_blank"
         >
           <i className="fab fa-twitter fa-2x" />
-        </a>
+        </a> */}
       </div>
     </div>
   )
