@@ -6,6 +6,9 @@ import Art_1 from '../images/Art-1.jpg'
 import Art_2 from '../images/Art-2.jpg'
 import Art_3 from '../images/Art-3.jpg'
 import Art_4 from '../images/Art-4.jpg'
+import pwn_1 from '../images/pwn_1.jpg'
+import pwn_2 from '../images/pwn_2.jpg'
+import pwn_3 from '../images/pwn_3.jpg'
 
 const Projects = (): JSX.Element => {
   return (
@@ -57,7 +60,7 @@ const PROJECTS = [
     site: 'https://pwnagotchi.ai/',
     private: true,
     client: true,
-    images: [],
+    images: [pwn_1, pwn_2, pwn_3],
   },
   {
     name: 'Portfolio',
