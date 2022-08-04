@@ -3,7 +3,7 @@ declare module '*.svg' {
   export = value
 }
 
-declare module '*.png' {
+declare module '*.jpg' {
   const value
   export = value
 }
