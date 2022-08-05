@@ -26,10 +26,6 @@
       text-decoration: none;
       color: $secondary;
       @include standard-transition;
-
-      &:hover {
-        transform: translateY(-7.5%);
-      }
     }
   }
 }

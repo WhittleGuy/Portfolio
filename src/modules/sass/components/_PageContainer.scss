@@ -1,6 +1,9 @@
 .page-container {
-  width: #{(1920/2)}px;
-  position: relative;
+  position: absolute;
+  top: 17rem;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  max-width: 60%;
 
   .page-title {
     font-size: 7rem;
@@ -16,7 +19,6 @@
   }
 
   .page-content {
-    width: #{(1920/2)}px;
-    padding: 1rem;
+    padding: 1.5rem 1rem;
   }
 }

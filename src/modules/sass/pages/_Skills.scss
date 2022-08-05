@@ -1,0 +1,9 @@
+.skills-content {
+  display: flex;
+  flex-direction: row;
+  place-items: start start;
+
+  .skill-section {
+    width: 15rem;
+  }
+}
